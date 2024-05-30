@@ -6,7 +6,7 @@ const io = new Server(3002, {
     methods: ["GET", "POST"],
   },
 });
-
+  
 io.on("connection", (socket) => {
   console.log("Connexion établie avec le client " + socket.id);
 
@@ -15,6 +15,7 @@ io.on("connection", (socket) => {
     console.log("Le client " + socket.id + " a rejoint la room " + room_id);
 
     socket.on("send_message", ({ message }) => {
+      console.log("Le client " + socket.id + " a envoyé le message " + message + " dans la room " + room_id);s
       io.to(room_id).emit("message", message);
     });
   });
