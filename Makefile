@@ -5,11 +5,11 @@ ENV=dev
 endif
 
 ifeq ($(ENV),dev)
-SSH_PORT=221
+SSH_PORT=22
 endif
 
 ifeq ($(ENV),prod)
-SSH_PORT=222
+SSH_PORT=22
 endif
 
 push:
